@@ -5,12 +5,7 @@ $(document).ready(function() {
 
     /*==========================================================================================
         * Home
-Iiron, carbon steel, stainless steel, brass, copper, alloy steel, aluminum, cold
-rolled steel with various plating
-
-
-
-        ============================================================================================*/
+     ===========================================================================================*/
     var data_array = [{
         img_src: 'img/supermarket_shelf.png',
         features: ['Boltless- Layers Can be adjustable easily', 'Shelves with ribs to prevent bending', 'Rust-free- Electrolytic Powder coated', 'Uprights with shoe for extra stability'],
@@ -55,7 +50,7 @@ rolled steel with various plating
         preloadImages.list = [];
     }
     var list = preloadImages.list;
-    for (var i = 0; i < data_array.length; i++) {
+    for (var i = 1; i < data_array.length; i++) {
         var img = new Image();
         img.onload = function() {
             var index = list.indexOf(this);
@@ -65,12 +60,16 @@ rolled steel with various plating
                 list.splice(index, 1);
             }
         }
-        list.push(img);
+        
         img.src = data_array[i].img_src;
+        list.push(img);
     }
 }
 
-preloadImages();
+$(window).bind("load", function() {
+   preloadImages();
+});
+
 
     //Slide menu and Features
     function sideMenu() {
@@ -108,6 +107,7 @@ preloadImages();
 
         });
 
+
         popup.click(function() {
 
             $(this).toggleClass('toggle_popup');
@@ -121,6 +121,29 @@ preloadImages();
             }
 
         });
+
+       
+                //swipe functions
+     $( "body" ).on( "swipeleft", swipeleftHandler );
+ 
+  // Callback function references the event target and adds the 'swipeleft' class to it
+    function swipeleftHandler( event ){
+         if (side_menu) {
+                    sideMenu();
+                };
+  };
+
+   $("body").on( "swiperight", swiperightHandler );
+ 
+  // Callback function references the event target and adds the 'swipeleft' class to it
+    function swiperightHandler( event ){
+         if (!side_menu) {
+                    sideMenu();
+                };
+  };
+
+       
+
 
         //Responsive effects
         var body = $(window);
@@ -141,6 +164,17 @@ preloadImages();
 
         });
 
+        //Image click event
+         var image = $('#q_slider img');
+         image.click(function() {
+             if (side_menu) {
+                    sideMenu();
+                };
+             if (bottom_menu) {
+                    popup.toggleClass('toggle_popup');
+                    bottom_menu = false;
+                };
+         });
 
 
     };
