@@ -314,7 +314,8 @@ footer {
     margin: 8px 80px;
     font-size: small;
     text-align: left;
-    mouse: pointer;
+    cursor:  pointer;
+    padding: 3px;
 }
 
 @keyframes zoom{
@@ -323,19 +324,27 @@ footer {
     font-weight: 600;
     margin: 8px 80px;
     font-size: small;
-    text-align: left;
+   
     }
 
-    100% {
+    50% {
     color: #fff;
     font-weight: 800;
     margin: -90px 80px;
     font-size: larger;
-    text-align: left;
+   
+    }
+
+    100% {
+     color: #fff;
+    font-weight: 600;
+    margin: 8px 80px;
+    font-size: small;
+    
     }
 }
 .zoom_in {
-     animation: zoom 3s;
+     animation: zoom 2s;
     animation-fill-mode: forwad;
 }
 

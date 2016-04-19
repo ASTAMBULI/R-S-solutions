@@ -181,6 +181,7 @@ $(window).bind("load", function() {
     });
 
     $('#mobile').mouseleave(function() {
+        
         $(this).removeClass('zoom_in');
 
     });
