@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
     //Page Loading
-
-
     /*==========================================================================================
         * Home
      ===========================================================================================*/
@@ -123,24 +121,6 @@ $(window).bind("load", function() {
         });
 
        
-                //swipe functions
-     $( "body" ).on( "swipeleft", swipeleftHandler );
- 
-  // Callback function references the event target and adds the 'swipeleft' class to it
-    function swipeleftHandler( event ){
-         if (side_menu) {
-                    sideMenu();
-                };
-  };
-
-   $("body").on( "swiperight", swiperightHandler );
- 
-  // Callback function references the event target and adds the 'swipeleft' class to it
-    function swiperightHandler( event ){
-         if (!side_menu) {
-                    sideMenu();
-                };
-  };
 
        
 
@@ -191,6 +171,17 @@ $(window).bind("load", function() {
         $(this).animate({
             width: '110px'
         });
+
+    });
+
+    //Mobile div hover effect.
+      $('#mobile').mouseover(function() {
+        $(this).addClass('zoom_in');
+
+    });
+
+    $('#mobile').mouseleave(function() {
+        $(this).removeClass('zoom_in');
 
     });
 
@@ -337,7 +328,6 @@ $(window).bind("load", function() {
     if (fancy.length >= 1) {
         fancy.fancybox();
     }
-
 
 
 
