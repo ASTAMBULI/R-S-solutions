@@ -1,9 +1,9 @@
 <?php
-    $to = "mail@yourdomain.com"; //Rs contact us form email address.
+    $to = "4bub123@gmail.com"; //Rs contact us form email address.
     $from = $_REQUEST['email']; 
     $name = $_REQUEST['name']; 
     $headers = "From: $from"; 
-    $subject = "You have a message sent from your site"; 
+    $subject = "Message sent from your site Contact Form."; 
     $fields = array(); 
     $fields{"name"} = "name"; 
     $fields{"email"} = "email"; 
