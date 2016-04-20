@@ -327,7 +327,7 @@ footer {
    
     }
 
-    50% {
+   100% {
     color: #fff;
     font-weight: 800;
     margin: -90px 80px;
@@ -335,13 +335,6 @@ footer {
    
     }
 
-    100% {
-     color: #fff;
-    font-weight: 600;
-    margin: 8px 80px;
-    font-size: small;
-    
-    }
 }
 .zoom_in {
      animation: zoom 2s;
